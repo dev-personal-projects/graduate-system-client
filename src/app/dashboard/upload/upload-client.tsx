@@ -27,7 +27,7 @@ import {
   type GraduatePayload,
   type BulkResult,
 } from "@/lib/actions";
-import { EMPLOYED_STATUSES, EMPLOYED_STATUSES_SET } from "@/lib/dashboard-utils";
+import { EMPLOYED_STATUSES_SET } from "@/lib/dashboard-utils";
 
 const CAMPUSES = ["Main Campus (Nchiru)", "Meru Town Campus"] as const;
 
@@ -298,7 +298,6 @@ const SPREADSHEET_COLUMNS = [
   "employment_county", "months_to_employ", "linkedin_url",
 ] as const;
 
-const REQUIRED_COLS = ["full_name"];
 const MAX_ROWS = 500;
 const NAME_RE = /^[A-Za-z\s''-]+$/;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -332,6 +331,7 @@ function parseExcelToRows(buffer: ArrayBuffer): Record<string, string>[] {
   });
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function SpreadsheetUpload({ schools }: { schools: School[] }) {
   const [isPending, startTransition] = useTransition();
   const [rows, setRows] = useState<Record<string, string>[]>([]);

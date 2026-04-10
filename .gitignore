@@ -9,9 +9,9 @@ dist/
 # TypeScript
 *.tsbuildinfo
 
-# Environment secrets
-.env.local
-.env.*.local
+# # Environment secrets
+# .env.local
+# .env.*.local
 
 # Playwright test artifacts
 test-results/

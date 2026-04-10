@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { setupUnauthenticated, loginAndGo } from "./helpers/auth";
+import { setupUnauthenticated } from "./helpers/auth";
 
 test.describe("PIN Gate", () => {
   test("PIN gate renders when unauthenticated", async ({ page }) => {
